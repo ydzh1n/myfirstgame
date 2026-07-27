@@ -233,6 +233,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c5b0b7de6a663498cca875cd483e30, type: 3}
+--- !u!1 &382822775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382822777}
+  - component: {fileID: 382822776}
+  m_Layer: 0
+  m_Name: CoinSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &382822776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382822775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02cdacdd4b940a47830dd9d6202e9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 554906450019371788, guid: 00a526c7aa9f09a4bb7d47a2f3641b34, type: 3}
+  desiredCount: 3
+  respawnDelay: 0.5
+  safeRadius: 0.5
+  maxAttempts: 20
+  minX: -8
+  maxX: 8
+  minY: -4
+  maxY: 4
+--- !u!4 &382822777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382822775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0373935, y: -0.74109095, z: 0.013872623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442153659
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +633,8 @@ GameObject:
   - component: {fileID: 928561818}
   - component: {fileID: 928561822}
   - component: {fileID: 928561823}
+  - component: {fileID: 928561824}
+  - component: {fileID: 928561825}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -744,6 +799,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveAction: {fileID: -4098346443532182366, guid: 723a88c9336b8794fbd962bfc764c6a8, type: 3}
   moveSpeed: 5
+--- !u!114 &928561824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928561817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8126ecee13051c042b37852b6f4f1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLives: 3
+  invulnTime: 1
+--- !u!114 &928561825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928561817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa72ecb74c208047b78e07560ffe9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &999491628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1086,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1967698944182325464, guid: 62c5b0b7de6a663498cca875cd483e30, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6903121160146924574, guid: 62c5b0b7de6a663498cca875cd483e30, type: 3}
       propertyPath: m_Name
       value: Spike (1)
@@ -1104,3 +1189,4 @@ SceneRoots:
   - {fileID: 1648454844}
   - {fileID: 1428263396}
   - {fileID: 110771855}
+  - {fileID: 382822777}
