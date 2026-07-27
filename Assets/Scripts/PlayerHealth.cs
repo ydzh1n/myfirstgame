@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int startLives = 3;
+    [SerializeField] private int maxLives = 3;
     [SerializeField] private float invulnTime = 1f;
 
     private int lives;
@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private ScoreCounter scoreCounter;
 
     public int Lives => lives;
+    public int MaxLives => maxLives;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        lives = startLives;
+        lives = maxLives;
     }
 
     public void TakeDamage(int amount = 1)
