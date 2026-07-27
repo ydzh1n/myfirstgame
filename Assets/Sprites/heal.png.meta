@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33d4cef56aeaae742a1dba69bbc73721
+guid: 3bea28e94ca03c54192f6c755416195d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9205187020295436947
-    second: Coin 1_0
+      213: -1049461823314036041
+    second: heal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coin 1_0
+      name: heal_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39afeb3e2d46fbf70800000000000000
-      internalID: 9205187020295436947
+      spriteID: 7ba780038009f61f0800000000000000
+      internalID: -1049461823314036041
       vertices: []
       indices: 
       edges: []

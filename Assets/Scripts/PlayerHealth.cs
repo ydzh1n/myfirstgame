@@ -40,6 +40,15 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(InvulnerabilityRoutine());
     }
 
+    public bool AddLife(int amount = 1)
+    {
+        if (lives >= maxLives) return false;
+
+        lives = Mathf.Min(lives + amount, maxLives);
+        Debug.Log($"Healed. Lives: {lives}");
+        return true;
+    }
+
     private void Die()
     {
         int finalScore = scoreCounter != null ? scoreCounter.Score : 0;
