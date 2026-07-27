@@ -9,6 +9,14 @@ public class PlayerHealth : MonoBehaviour
 
     private int lives;
     private bool invulnerable;
+    private ScoreCounter scoreCounter;
+
+    public int Lives => lives;
+
+    private void Awake()
+    {
+        scoreCounter = GetComponent<ScoreCounter>();
+    }
 
     private void Start()
     {
@@ -33,6 +41,21 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        int finalScore = scoreCounter != null ? scoreCounter.Score : 0;
+        int best = PlayerPrefs.GetInt("BestScore", 0);
+
+        if (finalScore > best)
+        {
+            best = finalScore;
+            PlayerPrefs.SetInt("BestScore", best);
+            PlayerPrefs.Save();
+            Debug.Log($"New best score: {best}");
+        }
+        else
+        {
+            Debug.Log($"Score: {finalScore}, best: {best}");
+        }
+
         Debug.Log("No lives left. Restarting level.");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
