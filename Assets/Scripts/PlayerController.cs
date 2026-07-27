@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         if (sprite != null) originalColor = sprite.color;
-        gyro = FindObjectOfType<GyroscopeController>();
+        gyro = FindAnyObjectByType<GyroscopeController>();
     }
 
     private void OnEnable()

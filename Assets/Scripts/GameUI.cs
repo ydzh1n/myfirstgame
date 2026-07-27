@@ -18,8 +18,8 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        scoreCounter = FindObjectOfType<ScoreCounter>();
-        playerHealth = FindObjectOfType<PlayerHealth>();
+        scoreCounter = FindAnyObjectByType<ScoreCounter>();
+        playerHealth = FindAnyObjectByType<PlayerHealth>();
 
         int best = PlayerPrefs.GetInt("BestScore", 0);
         bestText.text = $"Best: {best}";

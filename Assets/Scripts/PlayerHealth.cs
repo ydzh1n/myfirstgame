@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         scoreCounter = GetComponent<ScoreCounter>();
-        cameraShake = FindObjectOfType<CameraShake>();
+        cameraShake = FindAnyObjectByType<CameraShake>();
     }
 
     private void Start()
