@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private int lives;
     private bool invulnerable;
     private ScoreCounter scoreCounter;
+    private CameraShake cameraShake;
 
     public int Lives => lives;
     public int MaxLives => maxLives;
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         scoreCounter = GetComponent<ScoreCounter>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     private void Start()
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        if (cameraShake != null) cameraShake.Shake();
         StartCoroutine(InvulnerabilityRoutine());
     }
 
