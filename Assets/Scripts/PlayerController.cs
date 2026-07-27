@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     private float speedMultiplier = 1f;
     private Color originalColor;
     private Coroutine boostRoutine;
+    private GyroscopeController gyro;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         if (sprite != null) originalColor = sprite.color;
+        gyro = FindObjectOfType<GyroscopeController>();
     }
 
     private void OnEnable()
@@ -35,6 +37,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         moveInput = moveAction.action.ReadValue<Vector2>();
+
+        if (gyro != null && gyro.IsAvailable)
+        {
+            Vector2 gyroInput = gyro.GetInput();
+            if (gyroInput != Vector2.zero)
+                moveInput = gyroInput;
+        }
     }
 
     private void FixedUpdate()
